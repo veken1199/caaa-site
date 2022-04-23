@@ -1,5 +1,3 @@
-
 <?php
-include_once("index.html");
-cmavar_dump($_POST)
+  include_once("index.html");
 ?>

@@ -226,7 +226,7 @@
 
   @keyframes tracking-in-expand-fwd-right {
     0% {
-      transform: translateZ(-700px) translateX(-500px);
+      transform: translateZ(-700px) translateX(-10px);
       opacity: 0;
     }
 
@@ -242,7 +242,7 @@
 
   @keyframes tracking-in-expand-fwd-left {
     0% {
-      transform: translateZ(-700px) translateX(500px);
+      transform: translateZ(-700px) translateX(10px);
       opacity: 0;
     }
 
@@ -454,12 +454,9 @@
     });
 
     const slideRightObserver = new IntersectionObserver(entries => {
-      // Loop over the entries
       entries.forEach(entry => {
         console.log(entry);
-        // If the element is visible
         if (entry.isIntersecting) {
-          // Add the animation class
           entry.target.classList.add('slide-right');
         } else {
 
@@ -515,11 +512,11 @@ if ($navbarBurgers.length > 0) {
 
     slideLeftObserver.observe(document.querySelector('.left-scroll-trackable-2'));
     slideLeftObserver.observe(document.querySelector('.left-scroll-trackable-3'));
+
     slideUpObserver.observe(document.querySelector('.slide-up-0'));
     slideUpObserver.observe(document.querySelector('.slide-up-1'));
     slideUpObserver.observe(document.querySelector('.slide-up-2'));
   </script>
-
 </body>
 
 
