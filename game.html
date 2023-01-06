@@ -340,9 +340,11 @@
           </p>
 
           <div>
+            <p class="has-text-white">Your in-game character name: <span class="has-text-weight-bold" id="name"></span> </p>
             <p class="has-text-white">Profession: <span class="has-text-weight-bold" id="profession"></span> </p>
             <p class="has-text-white">Favourite food: <span class="has-text-weight-bold" id="fav_food"></span> </p>
-            <p class="has-text-white">Allergies: <span class="has-text-weight-bold" id="allergies"></span> </p>
+            <p class="has-text-white">Favourite brand: <span class="has-text-weight-bold" id="fav_brand"></span> </p>
+            <p class="has-text-white">Sports: <span class="has-text-weight-bold" id="sports"></span> </p>
             <p class="has-text-white">Where were you between 9-10 on Christmas eve: <span class="has-text-weight-bold"
                 id="location"></span> </p>
           </div>
@@ -520,29 +522,47 @@
 
   <script type="text/javascript">
 
-    let profiles = {
-      "1": {
-        "profession": "Pilot",
-        "location": "Guzzo Movies",
-        "allergies": "Corn",
-        "fav_food": "Sushi"
-      }
-    };
+    let names = [
+
+    ]
+      
+    let professions = [
+      "engineer"
+    ]
+      
+    let places = [
+      
+    ]
+
+    let fav_food = [
+
+    ]
+
+    let fav_sports = [
+
+    ]
+
+    let fav_brand = [ 
+
+    ]
 
     function fetchProfile() {
-      bracelet_id = document.getElementById("bracelet_id").value
-      var profile = profiles[bracelet_id]
-
-      if (profile == undefined) {
+      bracelet_id = document.getElementById("bracelet_id").value - 1
+      document.getElementById("profile").style.display = "none"
+      
+      if (professions[bracelet_id] == undefined) {
         document.getElementById("bracelet_error").innerHTML = "Profile not found"
       } else {
         document.getElementById("bracelet_error").innerHTML = ""
         document.getElementById("profile").style.display = "block"
 
-        document.getElementById("profession").innerHTML = profile["profession"]
-        document.getElementById("fav_food").innerHTML = profile["fav_food"]
-        document.getElementById("location").innerHTML = profile["location"]
-        document.getElementById("allergies").innerHTML = profile["allergies"]
+
+        document.getElementById("name").innerHTML = names[bracelet_id]
+        document.getElementById("profession").innerHTML = professions[bracelet_id]
+        document.getElementById("fav_food").innerHTML = fav_food[bracelet_id]
+        document.getElementById("fav_brand").innerHTML = fav_brand[bracelet_id]
+        document.getElementById("sports").innerHTML = sports[bracelet_id]
+        document.getElementById("location").innerHTML = places[bracelet_id]
       }
 
     }
